@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Kinetic O&P</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .faq-categories {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .faq-cat-btn {
+      padding: 10px 24px;
+      border: 2px solid var(--border-gray);
+      border-radius: 100px;
+      background: var(--white);
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark-gray);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .faq-cat-btn:hover, .faq-cat-btn.active {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
+    }
+    .faq-group-title {
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--red);
+      margin: 40px 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--red-tint);
+    }
+    .faq-group-title:first-child { margin-top: 0; }
+    .still-questions {
+      text-align: center;
+      margin-top: 60px;
+      padding: 48px;
+      background: var(--light-gray);
+      border-radius: 16px;
+    }
+    .still-questions h3 { margin-bottom: 12px; }
+    .still-questions p {
+      color: var(--medium-gray);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.jpg" alt="Kinetic O&P">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html">Patient Resources</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:8154017260" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (815) 401-7260
+        </a>
+        <a href="contact.html" class="btn btn-primary">Schedule Visit</a>
+      </div>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ PAGE HEADER ═══ -->
+  <div class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; FAQ</p>
+      <h1>Frequently Asked Questions</h1>
+      <div class="red-line"></div>
+    </div>
+  </div>
+
+  <!-- ═══ FAQ CONTENT ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="faq-list">
+
+        <!-- General Questions -->
+        <div class="faq-group-title">General Questions</div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Do I need a referral or prescription to be seen?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, a physician's prescription is required for orthotic and prosthetic services. If you don't have one yet, we can help coordinate with your physician to obtain the necessary documentation. Your doctor can fax the prescription to us at (815) 401-7267.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What should I bring to my first appointment?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Please bring your photo ID, insurance card(s), physician's prescription or referral, and any current orthotic or prosthetic devices you use. If you've downloaded and completed our patient intake forms ahead of time, bring those as well. Otherwise, please arrive 15 minutes early to fill out paperwork.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How long does the initial evaluation take?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your initial evaluation typically takes 45 minutes to 1 hour. During this time, your practitioner will discuss your medical history, assess your needs, take measurements, and develop a personalized care plan with you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How long does it take to get my device?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Timelines vary depending on the type of device and complexity. Custom prosthetics typically take 2-4 weeks, while orthotics may be available sooner. Some off-the-shelf devices can be fitted the same day. We'll give you a clear timeline at your evaluation.</p>
+          </div>
+        </div>
+
+        <!-- Insurance & Payment -->
+        <div class="faq-group-title">Insurance &amp; Payment</div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What insurance do you accept?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We work with most major insurance providers including Medicare, Medicaid, Blue Cross Blue Shield, Aetna, UnitedHealthcare, Cigna, Humana, and many more. Contact us at (815) 401-7260 and we'll verify your specific coverage before your appointment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Does Medicare cover prosthetics and orthotics?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Medicare Part B typically covers medically necessary prosthetic and orthotic devices when prescribed by a physician. Coverage may include the device itself, fittings, adjustments, and repairs. We'll help you understand your specific coverage and handle the authorization process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Will I have any out-of-pocket costs?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Out-of-pocket costs depend on your specific insurance plan, deductible, and co-pay requirements. We verify your benefits before beginning treatment and will provide you with a clear estimate of any costs you may be responsible for.</p>
+          </div>
+        </div>
+
+        <!-- Diabetic Footwear -->
+        <div class="faq-group-title">Diabetic Footwear</div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Does Medicare cover diabetic shoes?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Medicare Part B covers one pair of diabetic shoes and three pairs of custom inserts per calendar year for qualifying patients. You must have diabetes and meet specific criteria, including having your physician certify the medical necessity. We handle the paperwork for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            I have a Medicare Advantage plan — am I still covered?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Medicare Advantage plans are required to cover at least the same benefits as Original Medicare, so diabetic shoes should be covered. However, your plan may have specific network requirements or prior authorization procedures. Call us and we'll verify your specific plan's coverage.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What do I need to bring for my diabetic shoe fitting?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Please bring your insurance card, photo ID, and your physician's prescription or Statement of Certifying Physician form. If your doctor hasn't provided this, we can help coordinate. Wear the type of socks you'd normally wear with your shoes.</p>
+          </div>
+        </div>
+
+        <!-- Riverside Clinic -->
+        <div class="faq-group-title">Riverside P&amp;O Clinic</div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What is the Riverside P&amp;O Clinic?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The Riverside Prosthetic & Orthotic Clinic is a multi-disciplinary clinic held the second Wednesday of every month at Riverside Medical Center in Kankakee. It brings together physicians (Dr. Hung and Dr. Gilbert), therapists, and Aaron Hays (CPO) to provide collaborative care — so you can see your entire team in one visit rather than scheduling multiple appointments.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How do I schedule an appointment at the Riverside Clinic?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can schedule through Dr. Hung's office, Dr. Gilbert's office, or by calling Kinetic O&P directly at (815) 401-7260. We'll coordinate the details and make sure you're set up to see the right team members during clinic day.</p>
+          </div>
+        </div>
+
+        <!-- Still have questions? -->
+        <div class="still-questions">
+          <h3>Still Have Questions?</h3>
+          <p>We're happy to help. Reach out to our team and we'll get back to you as soon as possible.</p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <a href="tel:8154017260" class="btn btn-outline">Call (815) 401-7260</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo.jpg" alt="Kinetic O&P">
+          <p>Dedicated to improving lives through expert orthotic and prosthetic care. New Mobility; New Possibility.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="resources.html">Patient Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Prosthetics</a></li>
+            <li><a href="services.html">Orthotics</a></li>
+            <li><a href="services.html">Diabetic Footwear</a></li>
+            <li><a href="services.html">Spinal &amp; Cervical</a></li>
+            <li><a href="services.html#riverside">Riverside Clinic</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>765 Plum Creek Drive<br>Bourbonnais, IL 60914</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>(815) 401-7260</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@kineticop.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Kinetic O&P LTD. All rights reserved.</span>
+        <span>Bourbonnais, Illinois</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('siteNav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Kinetic O&P</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .about-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-image {
+      height: 480px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+    .about-image .accent-box {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 200px;
+      height: 200px;
+      background: var(--red-tint);
+      border-radius: 16px;
+      z-index: -1;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .value-card {
+      text-align: center;
+      padding: 40px 24px;
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .value-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--red-tint);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+    .value-card h3 {
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      color: var(--medium-gray);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* ─── Full-width team bios ─── */
+    .team-bio {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--border-gray);
+    }
+    .team-bio:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .team-bio .bio-image {
+      flex: 0 0 280px;
+      height: 320px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .team-bio .bio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .team-bio .bio-text {
+      flex: 1;
+    }
+    .team-bio .bio-text h3 {
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+    .team-bio .bio-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+    .team-bio .bio-text p {
+      color: var(--medium-gray);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 968px) {
+      .about-story { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .team-bio { flex-direction: column; }
+      .team-bio .bio-image { flex: 0 0 auto; width: 100%; height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.jpg" alt="Kinetic O&P">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html">Patient Resources</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:8154017260" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (815) 401-7260
+        </a>
+        <a href="contact.html" class="btn btn-primary">Schedule Visit</a>
+      </div>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ PAGE HEADER ═══ -->
+  <div class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About Us</p>
+      <h1>About Kinetic O&P</h1>
+      <div class="red-line"></div>
+    </div>
+  </div>
+
+  <!-- ═══ OUR STORY ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="about-story">
+        <div>
+          <p class="section-label">Our Story</p>
+          <h2 class="section-heading">Improving One Step at a Time</h2>
+          <p class="section-desc" style="margin-bottom: 20px;">
+            Kinetic O&P is dedicated to our patients. We take care of you every step of the way. Our team has decades of experience in Orthotics and Prosthetics.
+          </p>
+          <p class="section-desc" style="margin-bottom: 20px;">
+            Some of our patients have been with us for over 20 years. That is our standard of patient excellence. We are here for you, every step of the way.
+          </p>
+          <p class="section-desc" style="margin-bottom: 32px;">
+            We don't see patients as an expense. We see them as an investment. That subtle difference, we believe, is what leads to excellent patient care. Our philosophy is that we are adamantly here for you everyday and at every crossroad. Life long relationships from the start.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Get in Touch &rarr;</a>
+        </div>
+        <div class="about-image img-placeholder" style="position: relative;">
+          [Team / Office Photo]
+          <div class="accent-box"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VALUES ═══ -->
+  <section class="section gray-bg">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Our Values</p>
+        <h2 class="section-heading">What Drives Us</h2>
+        <p class="section-desc">The principles that guide everything we do at Kinetic O&P.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">&#10084;&#65039;</div>
+          <h3>Patient First</h3>
+          <p>Every decision we make starts with the patient. Your comfort, mobility, and independence are our top priorities.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#129309;</div>
+          <h3>Lifelong Relationships</h3>
+          <p>We build lasting partnerships with our patients. Many have trusted us for over 20 years because we never stop caring.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">&#127942;</div>
+          <h3>Clinical Excellence</h3>
+          <p>Decades of combined experience, ongoing education, and the latest technology ensure you receive the best care possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEAM ═══ -->
+  <section class="section team-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Our Team</p>
+        <h2 class="section-heading">Meet the Kinetic O&P Family</h2>
+        <p class="section-desc">Our dedicated team of professionals is here for you every step of the way.</p>
+      </div>
+      <div class="team-bios">
+
+        <!-- Aaron Hays -->
+        <div class="team-bio">
+          <div class="bio-image">
+            <img src="img/resized/1.webp" alt="Aaron Hays">
+          </div>
+          <div class="bio-text">
+            <h3>Aaron Hays</h3>
+            <div class="bio-title">Owner, Licensed CPO</div>
+            <p>Aaron R. Hays is the President and Founder of Kinetic O&P, a premier full-service Orthotics and Prosthetics company serving Kankakee and Iroquois Counties. As an O&P subject matter expert, Aaron has provided safe, high-quality products to area clients for 25+ years.</p>
+            <p>His dedication to delivering personalized, patient-centered care that restores mobility and independence encouraged him to establish Kinetic O&P. Throughout his career, he has specialized in prosthetics, with a strong focus on functional outcomes and long-term patient success. His approach emphasizes collaboration, education, and innovative solutions tailored to each individual.</p>
+            <p>In addition to his clinical work, he currently serves as President of the St. Anne Unit District #24 School Board, reflecting his commitment to strengthening the community he proudly serves.</p>
+          </div>
+        </div>
+
+        <!-- Maria Gonzalez -->
+        <div class="team-bio">
+          <div class="bio-image">
+            <img src="img/resized/2.webp" alt="Maria Gonzalez">
+          </div>
+          <div class="bio-text">
+            <h3>Maria Gonzalez</h3>
+            <div class="bio-title">Licensed CO, CFom</div>
+            <p>Maria has been an integral part of Kinetic O&P since its inception in 2015. A native of Mazon, Illinois, she has witnessed and contributed to the practice's growth and continued success over the years. Her dedication and clinical expertise have played a meaningful role in shaping the patient-centered care model Kinetic is known for today.</p>
+            <p>As a Licensed Certified Orthotist and Certified Fitter of Orthotics, Maria is one of the few clinicians in the region who is both cranial remolding orthosis certified and mastectomy certified. She is deeply passionate about serving pediatric patients, supporting women's health, and participating in initiatives such as the Special Olympics.</p>
+            <p>Maria values the family-oriented culture at Kinetic O&P and takes pride in building lasting relationships with the individuals and families she serves.</p>
+          </div>
+        </div>
+
+        <!-- Tricia Lambrecht -->
+        <div class="team-bio">
+          <div class="bio-image">
+            <img src="img/resized/3.webp" alt="Tricia Lambrecht">
+          </div>
+          <div class="bio-text">
+            <h3>Tricia Lambrecht</h3>
+            <div class="bio-title">Office Administrative Supervisor</div>
+            <p>Tricia joined Kinetic O&P in 2022 and brings strong organizational leadership to her role as Office Administrative Supervisor. A native of Beaverville, Illinois, she takes pride in supporting the efficiency and day-to-day operations of the practice.</p>
+            <p>Tricia oversees the daily functions of the front office, including accounts payable and receivable, fabrication tracking, and coordination of team events. Her attention to detail and commitment to streamlined processes help ensure that both patients and staff experience a smooth and well-organized environment.</p>
+            <p>With a passion for office management rooted in her appreciation for personal interaction and organizational excellence, Tricia plays a key role in maintaining the structure that allows the clinical team to focus on patient care.</p>
+          </div>
+        </div>
+
+        <!-- Ronald Johnson -->
+        <div class="team-bio">
+          <div class="bio-image">
+            <img src="img/resized/4.webp" alt="Ronald Johnson">
+          </div>
+          <div class="bio-text">
+            <h3>Ronald Johnson</h3>
+            <div class="bio-title">Reimbursement Manager</div>
+            <p>Ronald joined Kinetic O&P in 2021 and serves as the organization's Reimbursement Manager, working remotely from North Carolina. With more than 20 years of experience in healthcare reimbursement, he brings extensive knowledge in DMEPOS billing, insurance processes, and claims management.</p>
+            <p>Ronald plays a critical role in ensuring accurate and timely reimbursement while advocating for both the practice and its patients. He is committed to holding insurance companies accountable for proper claims processing and works diligently to navigate complex coverage requirements.</p>
+            <p>Patients and referral partners are welcome to contact Ronald directly with billing questions at <a href="mailto:rjohnson@kineticop.com" style="color: var(--red);">rjohnson@kineticop.com</a></p>
+          </div>
+        </div>
+
+        <!-- Alyssa Salazar -->
+        <div class="team-bio">
+          <div class="bio-image">
+            <img src="img/resized/5.webp" alt="Alyssa Salazar">
+          </div>
+          <div class="bio-text">
+            <h3>Alyssa Salazar</h3>
+            <div class="bio-title">Patient Intake &amp; Administrative Coordinator</div>
+            <p>Alyssa joined the Kinetic O&P team in 2024 as a part-time team member while pursuing her degree at Olivet University. She is on track to graduate in May 2026 with a bachelor's degree in business administration management and will transition into a full-time role upon completion of her studies.</p>
+            <p>With a strong dedication to patient advocacy and education, Alyssa plays an essential role in creating a smooth and welcoming intake experience. She maintains organized systems, supports accurate documentation, and serves as a compassionate first point of contact for patients.</p>
+            <p>Her attention to detail, warmth, and dedication reflect the patient-centered values at the heart of Kinetic O&P.</p>
+          </div>
+        </div>
+
+        <!-- Cecil Carroll -->
+        <div class="team-bio">
+          <div class="bio-image">
+            <img src="img/resized/6.webp" alt="Cecil Carroll">
+          </div>
+          <div class="bio-text">
+            <h3>Cecil Carroll</h3>
+            <div class="bio-title">Inventory and Purchasing</div>
+            <p>Cecil has served as Kinetic O&P's Inventory and Purchasing Coordinator since 2024, playing a vital role in ensuring the clinical team has the materials and components needed to deliver exceptional patient care. His dedication to organization, efficiency, and quality control supports the smooth daily operations of the practice.</p>
+            <p>Born into a military family, Cecil's life took a life-altering turn at the age of seven when an accident involving his entire family resulted in the loss of his right leg below the knee. Having experienced life using crutches, wheelchairs, and now a prosthesis, he brings a unique perspective and deep understanding of the impact orthotic and prosthetic care has on a person's independence and quality of life.</p>
+            <p>Outside of work, he is active in his church community and enjoys singing, wheelchair sports, ping pong, movies, and meaningful friendships.</p>
+          </div>
+        </div>
+
+        <!-- Madison Tondini -->
+        <div class="team-bio">
+          <div class="bio-image">
+            <img src="img/resized/7.webp" alt="Madison Tondini">
+          </div>
+          <div class="bio-text">
+            <h3>Madison Tondini</h3>
+            <div class="bio-title">Certified Orthotic &amp; Prosthetic Technician</div>
+            <p>Madison graduated from Joliet Junior College in May 2024, completing the Orthotic and Prosthetic Technician (OPT) program. She later earned her Certified Orthotic and Prosthetic Technician (CTPO) credential, further strengthening her technical expertise in the field.</p>
+            <p>While attending JJC, Madison began working at Kinetic O&P and transitioned into a full-time role after graduation. In the lab, she specializes in the fabrication of customized orthotic and prosthetic devices, carefully crafting each component to meet the unique needs of every patient.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="section red-bg">
+    <div class="cta-banner" style="text-align: center; padding: 40px 24px;">
+      <h2 style="color: var(--white);">Become Part of the Kinetic Family</h2>
+      <p style="color: rgba(255,255,255,0.85); font-size: 18px; max-width: 600px; margin: 16px auto 32px;">Schedule a consultation and discover the difference that personalized care can make.</p>
+      <a href="contact.html" class="btn btn-white">Schedule Your Visit</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo.jpg" alt="Kinetic O&P">
+          <p>Dedicated to improving lives through expert orthotic and prosthetic care. New Mobility; New Possibility.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="resources.html">Patient Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Prosthetics</a></li>
+            <li><a href="services.html">Orthotics</a></li>
+            <li><a href="services.html">Diabetic Footwear</a></li>
+            <li><a href="services.html">Spinal &amp; Cervical</a></li>
+            <li><a href="services.html#riverside">Riverside Clinic</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>765 Plum Creek Drive<br>Bourbonnais, IL 60914</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>(815) 401-7260</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@kineticop.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Kinetic O&P LTD. All rights reserved.</span>
+        <span>Bourbonnais, Illinois</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('siteNav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>

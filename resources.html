@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Resources — Kinetic O&P</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .resource-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      transition: var(--transition);
+      border: 1px solid var(--border-gray);
+      display: flex;
+      flex-direction: column;
+    }
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      border-color: var(--red);
+    }
+    .resource-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--red-tint);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .resource-card h3 {
+      margin-bottom: 12px;
+    }
+    .resource-card p {
+      color: var(--medium-gray);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .resource-card .btn {
+      align-self: flex-start;
+    }
+
+    .process-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .process-step::after {
+      content: '';
+      position: absolute;
+      top: 32px;
+      right: -16px;
+      width: 32px;
+      height: 2px;
+      background: var(--red);
+    }
+    .process-step:last-child::after { display: none; }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 16px;
+    }
+    .process-step h4 {
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      color: var(--medium-gray);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .insurance-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .insurance-logo {
+      width: 120px;
+      height: 60px;
+      background: var(--white);
+      border: 1px solid var(--border-gray);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #999;
+      font-weight: 600;
+    }
+
+    @media (max-width: 968px) {
+      .process-section { grid-template-columns: 1fr 1fr; }
+      .process-step::after { display: none; }
+    }
+    @media (max-width: 640px) {
+      .process-section { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.jpg" alt="Kinetic O&P">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html" class="active">Patient Resources</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:8154017260" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (815) 401-7260
+        </a>
+        <a href="contact.html" class="btn btn-primary">Schedule Visit</a>
+      </div>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ PAGE HEADER ═══ -->
+  <div class="page-header">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Patient Resources</p>
+      <h1>Patient Resources</h1>
+      <div class="red-line"></div>
+    </div>
+  </div>
+
+  <!-- ═══ DOWNLOADABLE FORMS ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Forms &amp; Documents</p>
+        <h2 class="section-heading">Downloadable Patient Forms</h2>
+        <p class="section-desc">Save time at your visit by completing your forms ahead of time. Download, fill out digitally, and email to info@kineticop.com.</p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">&#128203;</div>
+          <h3>Patient Intake Form</h3>
+          <p>Complete your patient information, medical history, HIPAA acknowledgment, and assignment of benefits — all in one fillable PDF. Fill it out digitally and email it back to us before your appointment.</p>
+          <a href="#" class="btn btn-primary">Download Fillable PDF</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">&#128065;</div>
+          <h3>Patient Intake Form (Print)</h3>
+          <p>Prefer to fill out forms by hand? Download the printable version of our 3-page patient intake form and bring it with you to your first appointment.</p>
+          <a href="#" class="btn btn-outline">Download Printable PDF</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">&#129406;</div>
+          <h3>Diabetic Shoe Info Sheet</h3>
+          <p>Learn about our Medicare-covered diabetic shoe program, eligibility requirements, what to bring, and frequently asked questions about diabetic footwear.</p>
+          <a href="#" class="btn btn-outline">Download Info Sheet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ YOUR FIRST VISIT ═══ -->
+  <section class="section gray-bg">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What to Expect</p>
+        <h2 class="section-heading">Your First Visit</h2>
+        <p class="section-desc">We want your first experience with Kinetic O&P to be smooth and comfortable. Here's what to expect.</p>
+      </div>
+      <div class="process-section">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h4>Schedule</h4>
+          <p>Call us or use our contact form to schedule your initial evaluation. We'll confirm your insurance coverage.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h4>Paperwork</h4>
+          <p>Download and complete your patient forms ahead of time, or arrive 15 minutes early to fill them out.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h4>Evaluation</h4>
+          <p>Meet with your practitioner for a thorough evaluation. We'll discuss your needs, goals, and create a care plan.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h4>Treatment</h4>
+          <p>Custom fabrication and fitting of your device, with follow-up visits to ensure the perfect fit and function.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INSURANCE ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Coverage</p>
+        <h2 class="section-heading">Insurance Information</h2>
+        <p class="section-desc">We work with most major insurance providers. Contact us to verify your specific coverage before your appointment.</p>
+      </div>
+      <div class="insurance-logos">
+        <div class="insurance-logo">Medicare</div>
+        <div class="insurance-logo">Medicaid</div>
+        <div class="insurance-logo">Blue Cross<br>Blue Shield</div>
+        <div class="insurance-logo">Aetna</div>
+        <div class="insurance-logo">UnitedHealth</div>
+        <div class="insurance-logo">Cigna</div>
+        <div class="insurance-logo">Humana</div>
+        <div class="insurance-logo">And More...</div>
+      </div>
+      <p style="text-align: center; margin-top: 24px; color: var(--medium-gray); font-size: 14px;">
+        Don't see your insurance? Call us at <strong>(815) 401-7260</strong> — we'll verify your coverage for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT TO BRING ═══ -->
+  <section class="section gray-bg">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+        <div>
+          <p class="section-label">Be Prepared</p>
+          <h2 class="section-heading">What to Bring</h2>
+          <p class="section-desc" style="margin-bottom: 24px;">Having these items ready will help make your appointment as efficient as possible.</p>
+          <ul class="service-list" style="list-style: none; padding: 0;">
+            <li style="padding: 12px 0 12px 28px; position: relative; font-size: 15px; color: var(--dark-gray); border-bottom: 1px solid #eee;">
+              <span style="position: absolute; left: 0; top: 16px; color: var(--red); font-size: 16px;">&#10003;</span>
+              Photo ID (driver's license or state ID)
+            </li>
+            <li style="padding: 12px 0 12px 28px; position: relative; font-size: 15px; color: var(--dark-gray); border-bottom: 1px solid #eee;">
+              <span style="position: absolute; left: 0; top: 16px; color: var(--red); font-size: 16px;">&#10003;</span>
+              Insurance card(s) — primary and secondary
+            </li>
+            <li style="padding: 12px 0 12px 28px; position: relative; font-size: 15px; color: var(--dark-gray); border-bottom: 1px solid #eee;">
+              <span style="position: absolute; left: 0; top: 16px; color: var(--red); font-size: 16px;">&#10003;</span>
+              Physician's prescription or referral
+            </li>
+            <li style="padding: 12px 0 12px 28px; position: relative; font-size: 15px; color: var(--dark-gray); border-bottom: 1px solid #eee;">
+              <span style="position: absolute; left: 0; top: 16px; color: var(--red); font-size: 16px;">&#10003;</span>
+              Completed patient intake forms (if pre-filled)
+            </li>
+            <li style="padding: 12px 0 12px 28px; position: relative; font-size: 15px; color: var(--dark-gray);">
+              <span style="position: absolute; left: 0; top: 16px; color: var(--red); font-size: 16px;">&#10003;</span>
+              Any current orthotic/prosthetic devices you use
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="section-label">Hours &amp; Location</p>
+          <h2 class="section-heading">Visit Us</h2>
+          <div style="background: var(--white); border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-top: 8px;">
+            <div style="margin-bottom: 20px;">
+              <strong style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--red);">Address</strong>
+              <p style="margin-top: 4px; font-size: 16px;">765 Plum Creek Drive<br>Bourbonnais, IL 60914</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <strong style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--red);">Phone</strong>
+              <p style="margin-top: 4px; font-size: 16px;">(815) 401-7260</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <strong style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--red);">Fax</strong>
+              <p style="margin-top: 4px; font-size: 16px;">(815) 401-7267</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <strong style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--red);">Email</strong>
+              <p style="margin-top: 4px; font-size: 16px;">info@kineticop.com</p>
+            </div>
+            <div>
+              <strong style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--red);">Office Hours</strong>
+              <p style="margin-top: 4px; font-size: 16px;">Monday - Friday: 8:00 AM - 4:30 PM</p>
+              <p style="margin-top: 2px; font-size: 14px; color: var(--red);">Closed 12:00 - 1:00 PM (Lunch)</p>
+              <p style="margin-top: 4px; font-size: 15px; color: var(--medium-gray);">Saturday &amp; Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="section red-bg">
+    <div style="text-align: center; padding: 40px 24px;">
+      <h2 style="color: var(--white); margin-bottom: 16px;">Ready to Get Started?</h2>
+      <p style="color: rgba(255,255,255,0.85); font-size: 18px; max-width: 600px; margin: 0 auto 32px;">Download your forms, fill them out, and email them to us — or bring them to your first appointment.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-white">Schedule Your Visit</a>
+        <a href="tel:8154017260" class="btn btn-outline-white">Call (815) 401-7260</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo.jpg" alt="Kinetic O&P">
+          <p>Dedicated to improving lives through expert orthotic and prosthetic care. New Mobility; New Possibility.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="resources.html">Patient Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Prosthetics</a></li>
+            <li><a href="services.html">Orthotics</a></li>
+            <li><a href="services.html">Diabetic Footwear</a></li>
+            <li><a href="services.html">Spinal &amp; Cervical</a></li>
+            <li><a href="services.html#riverside">Riverside Clinic</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>765 Plum Creek Drive<br>Bourbonnais, IL 60914</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>(815) 401-7260</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@kineticop.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Kinetic O&P LTD. All rights reserved.</span>
+        <span>Bourbonnais, Illinois</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('siteNav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinetic O&P — New Mobility; New Possibility</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Home-specific styles */
+    .hero-home {
+      background: url('img/hero-prosthetic.jpg') center/cover no-repeat;
+      min-height: 90vh;
+    }
+    .hero-home .hero-bg {
+      background: linear-gradient(135deg, rgba(26,26,26,0.88) 0%, rgba(236,28,38,0.55) 100%);
+    }
+
+    .difference-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .difference-image {
+      height: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .services-preview .card-img {
+      background: var(--red-tint);
+      font-size: 56px;
+    }
+
+    .cta-banner {
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-banner h2 {
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 18px;
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 968px) {
+      .difference-section { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.jpg" alt="Kinetic O&P">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html">Patient Resources</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:8154017260" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (815) 401-7260
+        </a>
+        <a href="contact.html" class="btn btn-primary">Schedule Visit</a>
+      </div>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero hero-home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="section-label" style="color: var(--red-light);">Orthotics &amp; Prosthetics</p>
+      <h1>New Mobility;<br>New Possibility</h1>
+      <p class="hero-subtitle">
+        Improving one step at a time. Kinetic O&P is dedicated to our patients with decades of experience in Orthotics and Prosthetics. We are here for you, every step of the way.
+      </p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+        <a href="services.html" class="btn btn-outline-white">Our Services &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS BAR ═══ -->
+  <section class="section dark-bg" style="padding: 0;">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1000+</div>
+        <div class="stat-label">Patients Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Patient Focused</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OUR DIFFERENCE ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="difference-section">
+        <div>
+          <p class="section-label">What Makes Us Different</p>
+          <h2 class="section-heading">We See Patients as an Investment, Not an Expense</h2>
+          <p class="section-desc" style="margin-bottom: 20px;">
+            That subtle difference, we believe, is what leads to excellent patient care. Our philosophy is that we are adamantly here for you everyday and at every crossroad.
+          </p>
+          <p class="section-desc" style="margin-bottom: 32px;">
+            Some of our patients have been with us for over 20 years. That is our standard of patient excellence. Life long relationships from the start.
+          </p>
+          <a href="about.html" class="btn btn-outline">Meet Our Team &rarr;</a>
+        </div>
+        <div class="difference-image img-placeholder">
+          [Team Photo / Patient Care Image]
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES PREVIEW ═══ -->
+  <section class="section gray-bg services-preview">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-heading">Our Services</h2>
+        <p class="section-desc">Comprehensive orthotic and prosthetic care tailored to your unique needs.</p>
+      </div>
+      <div class="card-grid">
+        <!-- Prosthetics -->
+        <div class="card">
+          <div class="card-img" style="background: linear-gradient(135deg, var(--red-tint), #fff);">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v4m0 0l-3 8m3-8l3 8"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Prosthetics</h3>
+            <p>Lower and upper extremity prosthetics including below knee, above knee, hand, and finger prostheses. We also provide mastectomy prosthetics and supplies.</p>
+            <a href="services.html" class="card-link">Learn More &rarr;</a>
+          </div>
+        </div>
+        <!-- Orthotics -->
+        <div class="card">
+          <div class="card-img" style="background: linear-gradient(135deg, var(--red-tint), #fff);">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Orthotics</h3>
+            <p>Spinal, cervical, lower and upper extremity orthotic devices including TLSO, LSO, AFO, KAFO, cranial helmets, Myopro, and more.</p>
+            <a href="services.html" class="card-link">Learn More &rarr;</a>
+          </div>
+        </div>
+        <!-- Diabetic Footwear -->
+        <div class="card">
+          <div class="card-img" style="background: linear-gradient(135deg, var(--red-tint), #fff);">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1 1.9-1.7 3.1-1.7H22"/><path d="M6 12l-4 6"/><path d="M18 6l4 6"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Diabetic Footwear</h3>
+            <p>Orthopedic shoes, diabetic shoes, custom inserts, and offloading shoes. Medicare-covered diabetic shoe programs available for qualifying patients.</p>
+            <a href="services.html" class="card-link">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIAL ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Patient Stories</p>
+        <h2 class="section-heading">What Our Patients Say</h2>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          I couldn't function at my job without Aaron and his team. Without their care and support I wouldn't be where I'm at today. Thank you for that.
+        </p>
+        <p class="testimonial-author">&mdash; Shawn L.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RIVERSIDE CLINIC ═══ -->
+  <section class="riverside-banner">
+    <div class="container">
+      <div class="riverside-inner">
+        <div class="riverside-info">
+          <p class="section-label" style="color: var(--red-light);">Partnership</p>
+          <h2>Riverside Prosthetic &amp; Orthotic Clinic</h2>
+          <p>
+            A multi-disciplinary approach to care — collaborating together to move you toward independence without the multiple office visits required. Doctors, therapists, orthotists and prosthetists working together in one place.
+          </p>
+          <a href="services.html#riverside" class="btn btn-white" style="margin-top: 8px;">Learn More &rarr;</a>
+        </div>
+        <div>
+          <div class="riverside-details">
+            <div class="riverside-detail">
+              <div class="icon">&#128197;</div>
+              <div>
+                <div class="label">Schedule</div>
+                <div class="value">2nd Wednesday Monthly</div>
+              </div>
+            </div>
+            <div class="riverside-detail">
+              <div class="icon">&#128205;</div>
+              <div>
+                <div class="label">Location</div>
+                <div class="value">Riverside Medical Center, Kankakee</div>
+              </div>
+            </div>
+            <div class="riverside-detail">
+              <div class="icon">&#129658;</div>
+              <div>
+                <div class="label">Physicians</div>
+                <div class="value">Dr. Hung &amp; Dr. Gilbert</div>
+              </div>
+            </div>
+            <div class="riverside-detail">
+              <div class="icon">&#128222;</div>
+              <div>
+                <div class="label">Book Now</div>
+                <div class="value">(815) 401-7260</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="section red-bg">
+    <div class="cta-banner">
+      <h2>Ready to Take the Next Step?</h2>
+      <p>Schedule your consultation today and experience the Kinetic O&P difference. We're here for you every step of the way.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-white">Contact Us</a>
+        <a href="tel:8154017260" class="btn btn-outline-white">Call (815) 401-7260</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo.jpg" alt="Kinetic O&P">
+          <p>Dedicated to improving lives through expert orthotic and prosthetic care. New Mobility; New Possibility.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="resources.html">Patient Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Prosthetics</a></li>
+            <li><a href="services.html">Orthotics</a></li>
+            <li><a href="services.html">Diabetic Footwear</a></li>
+            <li><a href="services.html">Spinal &amp; Cervical</a></li>
+            <li><a href="services.html#riverside">Riverside Clinic</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>765 Plum Creek Drive<br>Bourbonnais, IL 60914</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>(815) 401-7260</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@kineticop.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Kinetic O&P LTD. All rights reserved.</span>
+        <span>Bourbonnais, Illinois</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // Sticky nav shadow on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('siteNav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+
+</body>
+</html>
