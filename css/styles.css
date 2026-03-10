@@ -821,10 +821,16 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .card-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-n  .testimonial-card {
+
+  .testimonial-card {
     flex-direction: column !important;
     text-align: center !important;
     gap: 20px !important;
+    padding: 32px !important;
+  }
+  .testimonial-card img {
+    width: 120px !important;
+    height: 120px !important;
   }
 }
 
